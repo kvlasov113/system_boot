@@ -108,34 +108,3 @@ Skipping udev rule: 91-permissions.rules
 *** Creating image file done ***
 *** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
 [root@lvm vagrant]# exit
-[vagrant@lvm ~]$ sudo su
-[root@lvm vagrant]# ls
-changeVG.log
-[root@lvm vagrant]# cat changeVG.log 
-Script started on Mon 25 Mar 2024 10:13:24 AM UTC
-[vagrant@lvm ~]$ vgs
-  WARNING: Running as a non-root user. Functionality may be unavailable.
-  /run/lvm/lvmetad.socket: access failed: Permission denied
-  WARNING: Failed to connect to lvmetad. Falling back to device scanning.
-  /dev/mapper/control: open failed: Permission denied
-  Failure to communicate with kernel device-mapper driver.
-  Incompatible libdevmapper 1.02.146-RHEL7 (2018-01-22) and kernel driver (unknown version).
-[vagrant@lvm ~]$ sudo su
-[root@lvm vagrant]# vgs
-  VG         #PV #LV #SN Attr   VSize   VFree
-  VolGroup00   1   2   0 wz--n- <38.97g    0 
-[root@lvm vagrant]# vgrename VolGroup00 OtusRoot
-  Volume group "VolGroup00" successfully renamed to "OtusRoot"
-[root@lvm vagrant]# cat /etc/fstab 
-
-#
-# /etc/fstab
-# Created by anaconda on Sat May 12 18:50:26 2018
-#
-# Accessible filesystems, by reference, are maintained under '/dev/disk'
-# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
-#
-/dev/mapper/VolGroup00-LogVol00 /                  Script started on Mon 25 Mar 2024 10:23:44 AM UTC
-[root@lvm vagrant]# vgs
-  VG       #PV #LV #SN Attr   VSize   VFree
-  OtusRoot   1   2   0 wz--n- <38.97g    0 
