@@ -19,7 +19,7 @@
 
 См. скриншот 2_1 2_2
 
-### init=/sysroot/bin/sh
+### 3. init=/sysroot/bin/sh
 
 Во время выбора ядра для заугрузки нажать <<e>>.
 В строке начинающейся с linux16 заменāем ro на rw init=/sysroot/bin/sh
