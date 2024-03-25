@@ -41,3 +41,14 @@
 ### См. changeVG.log
 
 ## Добавить модуль в initrd
+
+Создадим директорию для скриптов модуля 
+[root@otuslinux ~]# mkdir /usr/lib/dracut/modules.d/01test
+
+### Скрипты и лог в приложении.
+
+[root@otuslinux ~]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+или
+[root@otuslinux ~]# dracut -f -v
+
+
