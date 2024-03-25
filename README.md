@@ -43,6 +43,7 @@
 ## Добавить модуль в initrd
 
 Создадим директорию для скриптов модуля 
+
 [root@otuslinux ~]# mkdir /usr/lib/dracut/modules.d/01test
 
 ### Скрипты и лог в приложении.
