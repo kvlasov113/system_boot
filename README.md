@@ -6,7 +6,7 @@
 Во время выбора ядра для заугрузки нажать <<e>>.
 В строку начинающуюся с linux16 в конец добаить init=/bin/sh
 
-См. криншоты 1_1 и 1_2
+### См. криншоты 1_1 и 1_2
 
 ### 2. rd.break
 Во время выбора ядра для заугрузки нажать <<e>>.
@@ -17,7 +17,7 @@
 [root@otuslinux ~]# passwd root
 [root@otuslinux ~]# touch /.autorelabel
 
-См. скриншот 2_1 2_2
+### См. скриншот 2_1 2_2
 
 ### 3. init=/sysroot/bin/sh
 
@@ -27,4 +27,17 @@
 
 См. скришот 3_1 3_2
 
+## Переименовать VG
 
+[root@otuslinux ~]# vgrename VolGroup00 OtusRoot
+
+Правим /etc/fstab, /etc/default/grub, /boot/grub2/grub.cfg.
+
+Пример использвоания sed
+[root@lvm vagrant]# sed -i "s/VolGroup00/OtusRoot/g" /etc/default/grub 
+
+[root@otuslinux ~]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+
+### См. changeVG.log
+
+## Добавить модуль в initrd
