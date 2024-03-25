@@ -48,7 +48,9 @@
 ### Скрипты и лог в приложении.
 
 [root@otuslinux ~]# mkinitrd -f -v /boot/initramfs-$(uname -r).img $(uname -r)
+
 или
+
 [root@otuslinux ~]# dracut -f -v
 
 
